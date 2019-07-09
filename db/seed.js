@@ -26,6 +26,8 @@ const dining = {
 };
 const notIncluded = ['air conditioning', 'private entrance'];
 
+faker.seed(123);
+
 const getRandomObjectElements = (obj) => {
   const elements = {};
   const entries = Object.entries(obj);
