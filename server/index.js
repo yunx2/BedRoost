@@ -1,5 +1,6 @@
 const express = require('express');
 // const morgan = require('morgan');
+const getData = require('../db/index.js');
 
 const app = express();
 const port = 8080;
@@ -7,7 +8,8 @@ const port = 8080;
 app.use(express.static('./dist'));
 
 app.get('/description', (req, res) => {
-  res.send(console.log('success!')); // message shows up to the NODE console!!
+  console.log('fetching data!');
+  res.end(getData());
 });
 
 app.listen(port, (err) => {
