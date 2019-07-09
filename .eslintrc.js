@@ -5,5 +5,6 @@ module.exports={
       "no-unused-vars": [1, {"vars": "local", "args": "none"}],
       "no-param-reassign": 0,
       "no-console": 0,
+      "import/no-extraneous-dependencies": 0,
     }
    }
