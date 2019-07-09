@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "build": "webpack -w",
-    "start": "live-server"
+    "start": "live-server",
+    "seed": "node ./db/seed.js"
   },
   "author": "",
   "license": "ISC",
