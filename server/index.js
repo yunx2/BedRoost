@@ -1,9 +1,14 @@
 const express = require('express');
+// const morgan = require('morgan');
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
-app.use(app.static('./dist'));
+app.use(express.static('./dist'));
+
+app.get('/description', (req, res) => {
+  res.send(console.log('success!')); // message shows up to the NODE console!!
+});
 
 app.listen(port, (err) => {
   if (err) {
