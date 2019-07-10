@@ -24,7 +24,7 @@ const getData = (listingId) => {
     if (err) {
       console.log(err, 'error');
     }
-    console.log(docs);
+    console.log(typeof docs);
   });
 };
 

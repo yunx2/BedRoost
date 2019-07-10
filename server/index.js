@@ -9,7 +9,7 @@ app.use(express.static('./dist'));
 
 app.get('/description/:listingId', (req, res) => {
   console.log('fetching data!');
-  res.end(getData(req.params));
+  res.end(getData(parseInt(req.params.listingId)));
 });
 
 app.listen(port, (err) => {
