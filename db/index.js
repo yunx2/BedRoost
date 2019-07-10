@@ -2,12 +2,14 @@ const mongoose = require('mongoose');
 const Description = require('./Description.js');
 const generateFakeDescriptions = require('./seed.js');
 
-mongoose.connect('mongodb://localhost:27017');
+mongoose.connect('mongodb://localhost:27017/descriptions');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', async () => {
   console.log('connected');
+  db.dropCollection('descriptions');
+  console.log('deleted');
   const docs = generateFakeDescriptions();
   try {
     await Description.create(docs);
@@ -18,13 +20,11 @@ db.once('open', async () => {
 });
 
 const getData = () => {
-  Description.findById(134030, (err, resultDocs) => {
+  Description.findById(134030, (err, docs) => {
     if (err) {
       console.log(err, 'error');
-      return err;
     }
-    console.log('hello from getData');
-    return resultDocs;
+    console.log(('docs'));
   });
 };
 
