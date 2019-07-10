@@ -7,9 +7,15 @@ const port = 8080;
 
 app.use(express.static('./dist'));
 
-app.get('/description/:listingId', (req, res) => {
+app.get('/description/:listingId', async (req, res) => {
   console.log('fetching data!');
-  res.end(getData(parseInt(req.params.listingId)));
+  try {
+    const docs = await getData(parseInt(req.params.listingId));
+    res.send(docs);
+    console.log('data sent');
+  } catch (err) {
+    console.error('caught error');
+  }
 });
 
 app.listen(port, (err) => {

@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 const mongoose = require('mongoose');
 const Description = require('./Description.js');
 const generateFakeDescriptions = require('./seed.js');
@@ -19,13 +20,8 @@ db.once('open', async () => {
   }
 });
 
-const getData = (listingId) => {
-  Description.findById(listingId, (err, docs) => {
-    if (err) {
-      console.log(err, 'error');
-    }
-    console.log(typeof docs);
-  });
+const getData = async (listingId) => {
+  await Description.findById(listingId);
 };
 
 module.exports = getData;
