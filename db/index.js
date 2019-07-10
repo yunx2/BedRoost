@@ -19,12 +19,12 @@ db.once('open', async () => {
   }
 });
 
-const getData = () => {
-  Description.findById(134030, (err, docs) => {
+const getData = (listingId) => {
+  Description.findById(listingId, (err, docs) => {
     if (err) {
       console.log(err, 'error');
     }
-    console.log(('docs'));
+    console.log(docs);
   });
 };
 
