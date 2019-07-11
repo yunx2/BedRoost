@@ -5,9 +5,9 @@ import List from './List';
 import Info from './Info';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.location = location;
+  constructor({location}) {
+    super(location);
+    this.location = location;
     // this.state = {
     //   listingInfo: {},
     // }; // everything fetched from db is stored here as state?
@@ -32,7 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        hello world
+        {this.location}
         {/* <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city}/>
         <List amenities={this.state.listingInfo.Amenities}/>
         <Info about={this.state.listingInfo.description} /> */}
