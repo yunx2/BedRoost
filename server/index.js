@@ -1,11 +1,12 @@
 const express = require('express');
+const path = require('path');
 // const morgan = require('morgan');
 const getData = require('../db/index.js');
 
 const app = express();
 const port = 8080;
 
-// app.use(express.static('./dist'));
+app.use(express.static('dist'));
 
 app.get('/description/:listingId', async (req, res) => {
   console.log('fetching data!');

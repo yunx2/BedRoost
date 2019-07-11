@@ -4,6 +4,6 @@ import App from './components/App.jsx';
 
 
 ReactDOM.render(
-    <App location={window.location.pathname}/>,
+    <App />,
   document.getElementById('app')
 );

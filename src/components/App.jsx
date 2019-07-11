@@ -5,12 +5,12 @@ import List from './List';
 import Info from './Info';
 
 class App extends React.Component {
-  constructor({location}) {
-    super(location);
-    this.location = location;
-    this.state = {
-      listingInfo: {},
-    }; // everything fetched from db is stored here as state?
+  constructor(props) {
+    super(props);
+    // this.location = location;
+    // this.state = {
+    //   listingInfo: {},
+    // }; // everything fetched from db is stored here as state?
   }
 
   // async getDescription() {
@@ -32,9 +32,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city}/>
+        hello world
+        {/* <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city}/>
         <List amenities={this.state.listingInfo.Amenities}/>
-        <Info about={this.state.listingInfo.description} />
+        <Info about={this.state.listingInfo.description} /> */}
       </div>
     )   
   } 
