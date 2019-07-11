@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
 
-const title = 'React with Webpack and Babel';
+const title = {listingTitle};
 
 ReactDOM.render(
-  <div>{title}</div>,
+  <div>{title}
+    <App location={document.location.pathname} />
+  </div>,
   document.getElementById('app')
 );
