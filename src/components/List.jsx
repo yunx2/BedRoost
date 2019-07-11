@@ -11,24 +11,28 @@ class List extends React.Component {
       notIncluded: amenities.notIncluded,
     };
    }
-
-  renderView() {
-    
-  } 
   
   render() {
     return (
       <div>
         <h1>Basic</h1>
-        <div>
           {
             _.each(this.state.basic, (value, key) => {
               return <Amenity name={key} description={value} />
               })
           }
-
-        </div>
-
+        <h1>Dining</h1>
+        {
+          _.each(this.state.basic, (value, key) => {
+            return <Amenity name={key} description={value} />
+            })
+        }
+         <h1>notIncluded</h1>
+        {
+          _.each(this.state.basic, (value, key) => {
+            return <Amenity name={key} description={value} />
+            })
+        }
       </div> 
     )
   }
