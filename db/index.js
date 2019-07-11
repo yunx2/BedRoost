@@ -22,6 +22,7 @@ db.once('open', async () => {
 
 const getData = async (listingId) => {
   await Description.findById(listingId);
+  console.log('queried database');
 };
 
 module.exports = getData;
