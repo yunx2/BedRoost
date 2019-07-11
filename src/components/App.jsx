@@ -1,31 +1,39 @@
 import React from 'react';
 import axios from 'axios';
+import Title from './Title';
+import List from './List';
 
 class App extends React.Component {
   constructor({location}) {
     super(location);
-    this.state = {}; // everything fetched from db is stored here as state?
+    this.location = location;
+    this.state = {
+      listingInfo: {},
+    }; // everything fetched from db is stored here as state?
   }
 
-  async getDescription(path) {
-    try {
-      const result = await axios.get(path);
-      console.log(result);
-    } catch (error) {
-      console.error(error);
-    }
+  async getDescription() {
+      const result = await axios.get(this.location);
+      try {
+        console.log(result);
+        this.setState({
+          listingInfo: result
+        });
+      } catch (err) {
+        console.log(err);
+      }
   }
 
-  componentDidMount(location) {
-    this.getDescription(location);
-  }
-
+  // componentDidMount(location) {
+  //   this.getDescription(location);
+  // }
 
   render() {
-    return(
+    return (
       <div>
-        <p> { location } </p>
-      
+        <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city}/>
+        <List amenities={this.state.listingInfo.Amenities}/>
+
       </div>
     )   
   } 
