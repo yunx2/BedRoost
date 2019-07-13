@@ -7,7 +7,16 @@ const port = 3000;
 
 app.use('description/:listingId', express.static('dist'));
 
-app.get('/description/:listingId', (req, res) => res.send(req.params.listingId));
+app.get('/description/:listingId', async (req, res) => {
+  try {
+    await res.send(req.params.listingId);
+  } catch (err) {
+    res.statusCode = 500;
+    res.send(err);
+  }
+});
+
+
 app.listen(port, (err) => {
   if (err) {
     console.log(err);
