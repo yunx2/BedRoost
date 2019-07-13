@@ -19,10 +19,3 @@ db.once('open', async () => {
     console.error(err);
   }
 });
-
-const getData = async (listingId) => {
-  await Description.findById(listingId);
-  console.log('queried database');
-};
-
-module.exports = getData;
