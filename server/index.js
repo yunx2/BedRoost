@@ -9,16 +9,16 @@ console.log(Description);
 const app = express();
 const port = 3000;
 
-app.use('/rooms', express.static('dist'));
+app.use('/api/rooms/description/162725/', express.static('dist'));
 app.use(morgan('dev'));
 
 // when i do app.app
 // i wanna get the id in the endpoint
 // use the id to retrieve data from the db
 
-app.get('/rooms/:listingId', (req, res) => {
+app.get('/rooms/162725', (req, res) => {
   const id = req.params.listingId;
-  Description.findById(id, (err, results) => {
+  Description.findById(162725, (err, results) => {
     if (err) {
       console.log(err);
     } else {

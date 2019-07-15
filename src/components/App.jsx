@@ -4,12 +4,13 @@ import Title from './Title';
 import List from './List';
 import Info from './Info';
 
+
 class App extends React.Component {
   constructor({location}) {
     super(location);
     this.location = location;
     this.state = {
-      listingInfo: {},
+      listingInfo: {}
     }; // everything fetched from db is stored here as state?
   }
 
@@ -18,12 +19,12 @@ class App extends React.Component {
   // endpoint is /:listingId
   // looks like /123
   getDescription() {
-    console.log(this.location);
-    axios.get(this.location)
+    console.log('/rooms/162725');
+    axios.get('/rooms/162725')
       .then((response) => {
         console.log(response);
         this.setState({
-          listingInfo: response
+          listingInfo: response.data
         });
       })
       .catch((err) => {
@@ -38,8 +39,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        app app app 
-        {/* <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city}/>
+        app app app
+        {
+          <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city}/>  
+          /* 
         <List amenities={this.state.listingInfo.Amenities}/>
         <Info about={this.state.listingInfo.description} /> */}
       </div>
