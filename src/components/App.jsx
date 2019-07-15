@@ -8,12 +8,17 @@ class App extends React.Component {
   constructor({location}) {
     super(location);
     this.location = location;
-    // this.state = {
-    //   listingInfo: {},
-    // }; // everything fetched from db is stored here as state?
+    this.state = {
+      listingInfo: {},
+    }; // everything fetched from db is stored here as state?
   }
 
+
+  // use axios to get an endpoint and console log the response
+  // endpoint is /:listingId
+  // looks like /123
   getDescription() {
+    console.log(this.location);
     axios.get(this.location)
       .then((response) => {
         console.log(response);

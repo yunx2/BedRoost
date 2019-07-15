@@ -8,5 +8,6 @@ module.exports={
       "import/no-extraneous-dependencies": 0,
       "radix": 0,
       "no-debugger": 0,
+      "consistent-return": 0,
     }
    }
