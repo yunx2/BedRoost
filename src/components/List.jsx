@@ -1,40 +1,30 @@
 import React from 'react';
 import _ from 'underscore';
-import Amenity from './Amenity'
+import Amenity from './Amenity';
 
 class List extends React.Component {
-  constructor({amenities}) {
-    super(amenities);
+  constructor(props) {
+    super(props);
     this.state = {
-      basic: amenities.basic,
-      dining: amenities.dining,
-      notIncluded: amenities.notIncluded,
+      basic: props.amenities.basic,
+      dining: props.amenities.dining,
+      notIncluded: props.amenities.notIncluded,
     };
-   }
+  } 
   
   render() {
     return (
       <div>
         <h1>Basic</h1>
-          {
-            _.each(this.state.basic, (value, key) => {
-              return <Amenity name={key} description={value} />
-              })
+        {
+            _.each({ amenities: { basic } }, (value, key) => <Amenity name={key} description={value} />)
           }
         <h1>Dining</h1>
-        {
-          _.each(this.state.basic, (value, key) => {
-            return <Amenity name={key} description={value} />
-            })
-        }
-         <h1>notIncluded</h1>
-        {
-          _.each(this.state.basic, (value, key) => {
-            return <Amenity name={key} description={value} />
-            })
-        }
+          
+        <h1>notIncluded</h1>
+
       </div> 
-    )
+    );
   }
 }
 export default List;

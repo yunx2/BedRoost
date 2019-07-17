@@ -30,5 +30,9 @@ module.exports = {
     "radix": 0,
     "no-debugger": 0,
     "consistent-return": 0,
-  },
+    "react/prop-types": 0,
+    "no-trailing-spaces": 0,
+    "react/no-unused-state": 0,
+    "react/jsx-filename-extension": 0,
+  }
 };
