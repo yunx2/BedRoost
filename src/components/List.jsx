@@ -6,9 +6,9 @@ class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      basic: props.amenities.basic,
-      dining: props.amenities.dining,
-      notIncluded: props.amenities.notIncluded,
+      basic: this.props.amenities.basic,
+      dining: this.props.amenities.dining,
+      notIncluded: this.props.amenities.notIncluded,
     };
   } 
   
@@ -17,7 +17,7 @@ class List extends React.Component {
       <div>
         <h1>Basic</h1>
         {
-            _.each({ amenities: { basic } }, (value, key) => <Amenity name={key} description={value} />)
+            _.each(this.state.basic, (value, key) => <Amenity name={key} description={value} />)
           }
         <h1>Dining</h1>
           
