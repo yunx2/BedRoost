@@ -5,7 +5,7 @@ import React from 'react';
 const List = ({ amenities }) => (
   <div>
     <h1>Basic</h1>
-    {console.log(amenities.basic)}
+    {/* {console.log(amenities)} */}
   
     <h1>Dining</h1>
     
