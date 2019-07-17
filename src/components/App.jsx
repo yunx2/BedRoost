@@ -32,7 +32,7 @@ class App extends React.Component {
  
   render() {
     if (this.state.listingInfo) {
-      console.log(this.state.listingInfo.amenities)
+      console.log(this.state.listingInfo.amenities);
       return (
         <div>
           <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city} />
@@ -41,9 +41,9 @@ class App extends React.Component {
           <Info about={this.state.listingInfo.description} />
         </div>
       ); 
-    } 
+    }
     return null;
-  }
-} 
+  } 
+}
 
 export default App;
