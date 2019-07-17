@@ -12,7 +12,7 @@ class App extends React.Component {
     this.location = props.location;
     this.state = {
       listingInfo: {},
-    }; // everything fetched from db is stored here as state?
+    }; 
   }
 
   // use axios to get an endpoint and console log the response
@@ -27,22 +27,21 @@ class App extends React.Component {
     console.log('/rooms/162725');
     axios.get('/rooms/162725')
       .then((response) => {
-        console.log(response);
         this.setState({
           listingInfo: response.data,
         });
       })
+      .then(() => console.log(this.state.listingInfo.amenities.basic))
       .catch((err) => {
         console.log(err);
       });
   }
  
-
   render() {
     return (
       <div>
         <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city} />
-        {/* <List amenities={this.state.listingInfo.Amenities} /> */}
+        <List />
         <Info about={this.state.listingInfo.description} />
       </div>
     ); 

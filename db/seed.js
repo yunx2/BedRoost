@@ -53,7 +53,7 @@ const generateFakeDescriptions = () => {
       guestsSay: getRandomObjectElements(guestComments),
       selfCheckIn: faker.random.boolean(),
       description: faker.lorem.paragraph(),
-      Amenities: { basic: getRandomObjectElements(basic), dining: getRandomObjectElements(dining), notIncluded: getRandomObjectElements(notIncluded) },
+      amenities: { basic: getRandomObjectElements(basic), dining: getRandomObjectElements(dining), notIncluded: getRandomObjectElements(notIncluded) },
       city: faker.address.city(),
     };
     fakeDescriptions.push(fakeDescription);
