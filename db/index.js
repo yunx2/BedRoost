@@ -10,13 +10,13 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', async () => {
   console.log('mongoose connected to database');
-  // db.dropCollection('descriptions');
-  // console.log('deleted');
-  // const docs = generateFakeDescriptions();
-  // try {
-  //   await Description.create(docs);
-  //   console.log('inserted');
-  // } catch (err) {
-  //   console.error(err);
-  // }
+  db.dropCollection('descriptions');
+  console.log('deleted');
+  const docs = generateFakeDescriptions();
+  try {
+    await Description.create(docs);
+    console.log('inserted');
+  } catch (err) {
+    console.error(err);
+  }
 });

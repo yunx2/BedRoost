@@ -35,5 +35,6 @@ module.exports = {
     "react/no-unused-state": 0,
     "react/jsx-filename-extension": 0,
     "react/destructuring-assignment": 0,
+    "arrow-parens": 0,
   }
 };
