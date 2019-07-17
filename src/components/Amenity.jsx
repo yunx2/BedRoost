@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Amenity = ({name, description}) => (
+const Amenity = ({ name, description }) => (
   <div>
-    {name} <br></br>
+    {name} 
     <span>{description}</span>
   </div>
 
-)
+);
 
 export default Amenity;

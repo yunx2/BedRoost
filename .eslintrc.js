@@ -34,5 +34,6 @@ module.exports = {
     "no-trailing-spaces": 0,
     "react/no-unused-state": 0,
     "react/jsx-filename-extension": 0,
+    "react/destructuring-assignment": 0,
   }
 };
