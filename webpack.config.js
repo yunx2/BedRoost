@@ -15,7 +15,10 @@ module.exports = {
       },
       {
         test: /\.css/,
-        loaders: ['style-loader', 'css-loader'],
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader', options: { modules: true } },
+        ],
         include: `${__dirname}/src`,
       },
     ],
