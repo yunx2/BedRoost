@@ -10,9 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.location = props.location;
-    this.state = {
-      listingInfo: {},
-    }; 
+    this.state = {listingInfo: false}; 
   }
 
   componentDidMount() {
@@ -20,7 +18,6 @@ class App extends React.Component {
   }
   
   getDescription() {
-    console.log('/rooms/162725');
     axios.get('/rooms/162725')
       .then((response) => {
         this.setState({
@@ -34,14 +31,19 @@ class App extends React.Component {
   }
  
   render() {
-    return (
-      <div>
-        <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city} />
-        <List amenities={this.state.listingInfo.amenities} />
-        <Info about={this.state.listingInfo.description} />
-      </div>
-    ); 
+    if (this.state.listingInfo) {
+      console.log(this.state.listingInfo.amenities)
+      return (
+        <div>
+          <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city} />
+          
+          <List amenities={this.state.listingInfo.amenities} />
+          <Info about={this.state.listingInfo.description} />
+        </div>
+      ); 
+    } 
+    return null;
   }
-}
+} 
 
 export default App;

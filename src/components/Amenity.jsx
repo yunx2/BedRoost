@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Amenity = ({ name, description }) => (
+const Amenity = (props) => (
   <div>
-    {name} 
-    <span>{description}</span>
+    {props.name} 
+    <span>{props.description}</span>
   </div>
 );
 
