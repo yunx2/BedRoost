@@ -15,10 +15,6 @@ class App extends React.Component {
     }; 
   }
 
-  // use axios to get an endpoint and console log the response
-  // endpoint is /:listingId
-  // looks like /123
-
   componentDidMount() {
     this.getDescription();
   }
@@ -31,7 +27,7 @@ class App extends React.Component {
           listingInfo: response.data,
         });
       })
-      .then(() => console.log(this.state.listingInfo.amenities.basic))
+      // .then(() => console.log(this.state.listingInfo.amenities.basic))
       .catch((err) => {
         console.log(err);
       });
@@ -41,7 +37,7 @@ class App extends React.Component {
     return (
       <div>
         <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city} />
-        <List />
+        <List amenities={this.state.listingInfo.amenities} />
         <Info about={this.state.listingInfo.description} />
       </div>
     ); 

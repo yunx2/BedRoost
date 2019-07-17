@@ -5,7 +5,6 @@ const Amenity = ({ name, description }) => (
     {name} 
     <span>{description}</span>
   </div>
-
 );
 
 export default Amenity;
