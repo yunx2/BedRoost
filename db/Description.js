@@ -11,6 +11,7 @@ const descriptionSchema = new Schema({
   guestsSay: { type: Map, of: String },
   selfCheckIn: Boolean,
   description: String,
+  readMore: String,
   amenities: { type: Map, of: {} },
   city: String,
   sleepingArrangements: String,

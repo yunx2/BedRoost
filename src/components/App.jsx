@@ -50,7 +50,7 @@ class App extends React.Component {
         <div>
           <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city} />
           <List amenities={this.state.listingInfo.amenities} />
-          <Info about={this.state.listingInfo.description} />
+          <Info about={this.state.listingInfo.description} more={this.state.listingInfo.readMore} />
         </div>
       ); 
     }

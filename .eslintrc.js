@@ -37,5 +37,6 @@ module.exports = {
     "react/destructuring-assignment": 0,
     "arrow-parens": 0,
     "class-methods-use-this": 0,
+    "react/no-access-state-in-setstate": 0,
   }
 };

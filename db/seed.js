@@ -15,18 +15,25 @@ const guestComments = {
 };
 /* amenity types */
 const basic = {
-  wifi: 'Continuous access in the listing',
+  Wifi: 'Continuous access in the listing',
   'Laptop friendly workspace': 'A table or desk with space for a laptop and a chair that’s comfortable to work in',
-  essentials: 'Towels, bed sheets, soap, and toilet paper',
+  Essentials: 'Towels, bed sheets, soap, and toilet paper',
+  Heating: 'Central heating or a heater in the listing',
+  Washer: 'In the building, free or for a fee',
+  'Cable TV': '',
 };
 const dining = {
   kitchen: 'Space where guests can cook their own meals',
-  'coffee maker': 'coffee maker',
-  'cooking basics': 'Pots and pans, oil, salt and pepper',
+  'Coffee maker': '',
+  'Cooking basics': 'Pots and pans, oil, salt and pepper',
+  'Dishes and silverware': '',
+  Microwave: '',
 };
 const notIncluded = {
-  'air conditioning': '', 
-  'private entrance': ''};
+  'Air conditioning': '', 
+  'Private entrance': '',
+  Washer: '',
+};
 
 faker.seed(123);
 
@@ -55,6 +62,7 @@ const generateFakeDescriptions = () => {
       guestsSay: getRandomObjectElements(guestComments),
       selfCheckIn: faker.random.boolean(),
       description: faker.lorem.paragraph(),
+      readMore: faker.lorem.paragraph(),
       amenities: { basic: getRandomObjectElements(basic), dining: getRandomObjectElements(dining), notIncluded: getRandomObjectElements(notIncluded) },
       city: faker.address.city(),
     };
