@@ -1,0 +1,40 @@
+
+
+  static request sent to http://localhost:3000/api/rooms/description/162725
+
+  get request sent to http://localhost:3000/rooms/162725
+
+-------------------------------------TODO-----------------------------------------
+
+X-Get components to render again 
+  X-Fix eslint errors, while adding addition exceptions to eslintrc as necessary 
+
+X-Get css working again 
+
+X-Refactor list into a functional component which receives amenities object as props, and then access values directly from props object to use them 
+  X-change all attribute names schema to lower case for consistency 
+  ~Generally it's not a good idea to use data from props for initializing/updating a componeent's state. not good idea because it creates 2 'sources of truth' 
+  ~however getting state value from props is sometimes necessary and uses the lifecycle method:
+  getDerivedStateFromProps(props, state)
+   
+
+X-In List.jsx find out why this.state.amenities.basic is undefined in the current scope 
+    ~this is an asynchronous error. the getDescription method contains an axios request which is made once the component is mounted. the component renders, then any child components there may be are mounted and rendered
+    ~the axios request takes a relatively long time to get a response and the response contains the data needed to set the state. 
+    ~there is no data available to set as state when the App is first rendered and state remains the value we initialized it to be, which is am empty object
+    ~when the response from the server returns, the state is then changed to reflect the new data. this causes App to be rendered a second time
+
+
+X-Fix the async bug
+    X- refactor List back to functional component
+
+X-Finish List component
+   *right now Amenity components inside List component are all hardcoded
+->Add new field in database and seed scripts, make readMore component which conditionally render
+ 
+-Change List so that it's Amenity components are dynamic
+
+   
+ 
+
+  

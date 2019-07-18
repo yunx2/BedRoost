@@ -6,12 +6,15 @@ const descriptionSchema = new Schema({
   _id: Number,
   title: String,
   host: { name: String, superhost: Boolean },
-  hometype: { guests: Number, beds: Number, baths: Number },
+  hometype: {
+    roomtype: String, guests: Number, beds: Number, baths: Number, 
+  },
   roomtype: String,
   guestsSay: { type: Map, of: String },
   selfCheckIn: Boolean,
   description: String,
-  Amenities: { type: Map, of: {} },
+  readMore: String,
+  amenities: { type: Map, of: {} },
   city: String,
   sleepingArrangements: String,
 });

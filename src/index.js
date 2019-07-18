@@ -1,12 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import App from './components/App';
 
-const title = {listingTitle};
-
-ReactDOM.render(
-  <div>{title}
-    <App location={document.location.pathname} />
-  </div>,
-  document.getElementById('app')
-);
+ReactDOM.render(<App location={document.location.pathname} />,
+  document.getElementById('app'));
