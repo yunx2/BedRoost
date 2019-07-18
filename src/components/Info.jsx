@@ -16,6 +16,7 @@ class Info extends React.Component {
       view = (
         <div>
           <p>{this.props.about}</p>
+          The space
           <p>{this.props.more}</p>
           <button 
             type="button" 

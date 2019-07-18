@@ -4,7 +4,7 @@ import Amenity from './Amenity';
 const List = ({ amenities }) => {
   const keysBasic = Object.keys(amenities.basic);
   const keysDining = Object.keys(amenities.dining);
-  const keysNotIncluded = Object.keys(amenities.notIncluded);
+
   
   return (  
     <div> 
@@ -14,7 +14,7 @@ const List = ({ amenities }) => {
       <p>Dining</p>
       <Amenity name={keysDining[0]} description={amenities.dining[keysDining[0]]} />
       <p>Not Included</p>
-      <Amenity name={keysNotIncluded[0]} description={amenities.notIncluded[keysNotIncluded[0]]} />
+      <Amenity name={amenities.notIncluded} description="" />
     </div>  
   ); 
 };

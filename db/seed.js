@@ -29,11 +29,8 @@ const dining = {
   'Dishes and silverware': '',
   Microwave: '',
 };
-const notIncluded = {
-  'Air conditioning': '', 
-  'Private entrance': '',
-  Washer: '',
-};
+const notIncluded = [
+  'Air conditioning', 'Private entrance', 'Washer'];
 
 faker.seed(123);
 
@@ -57,13 +54,13 @@ const generateFakeDescriptions = () => {
       title: faker.hacker.phrase(),
       host: { name: faker.internet.userName(), superhost: faker.random.boolean() },
       hometype: {
-        hometype: faker.random.arrayElement(homeTypes), guests: faker.random.number({ min: 1, max: 5 }), beds: faker.random.number({ min: 0, max: 5 }), baths: faker.random.number({ min: 0, max: 5 }),
+        roomtype: faker.random.arrayElement(homeTypes), guests: faker.random.number({ min: 1, max: 5 }), beds: faker.random.number({ min: 0, max: 5 }), baths: faker.random.number({ min: 0, max: 5 }),
       },
       guestsSay: getRandomObjectElements(guestComments),
       selfCheckIn: faker.random.boolean(),
       description: faker.lorem.paragraph(),
       readMore: faker.lorem.paragraph(),
-      amenities: { basic: getRandomObjectElements(basic), dining: getRandomObjectElements(dining), notIncluded: getRandomObjectElements(notIncluded) },
+      amenities: { basic: getRandomObjectElements(basic), dining: getRandomObjectElements(dining), notIncluded: faker.random.arrayElement(notIncluded) },
       city: faker.address.city(),
     };
     fakeDescriptions.push(fakeDescription);

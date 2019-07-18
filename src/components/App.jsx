@@ -4,6 +4,7 @@ import axios from 'axios';
 import Title from './Title';
 import List from './List';
 import Info from './Info';
+// import Hometype from './HomeType';
 
 
 class App extends React.Component {
@@ -49,8 +50,9 @@ class App extends React.Component {
       return (
         <div>
           <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city} />
-          <List amenities={this.state.listingInfo.amenities} />
+          {/* <Hometype hometype={this.state.listingInfo.hometype} /> */}
           <Info about={this.state.listingInfo.description} more={this.state.listingInfo.readMore} />
+          <List amenities={this.state.listingInfo.amenities} />   
         </div>
       ); 
     }
