@@ -9,38 +9,41 @@ class Info extends React.Component {
   }
     
   render() {
+    let view;
     const hide = 'hide';
     const show = 'Read more about the space';
-    if (this.state.showMore) {
-      return ( 
+    if (this.state.showMore === true) {
+      view = (
         <div>
           <p>{this.props.about}</p>
           <p>{this.props.more}</p>
           <button 
             type="button" 
             onClick={() => {
-              this.setState((state) => ({ showMore: !state.showmore }));
+              this.setState({ showMore: false });
             }}
           >
             {hide}
           </button>
         </div>
-      ); 
-    } 
-    return (
-      <div>
-        <p>{this.props.about}</p>
-        <button 
-          type="button"
-          onClick={() => { 
-            this.setState((state) => ({ showMore: !state.showmore }));
-          }}
-        >
-          {show}
-        </button>
-      </div>
-    ); 
-  }  
+      );
+    } else {
+      view = (
+        <div>
+          <p>{this.props.about}</p>
+          <button
+            type="button"
+            onClick={() => {
+              this.setState({ showMore: true });
+            }}
+          >
+            {show}
+          </button>
+        </div>
+      );
+    }
+    return view;
+  }      
 }
 
 export default Info;
