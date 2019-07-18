@@ -24,7 +24,9 @@ const dining = {
   'coffee maker': 'coffee maker',
   'cooking basics': 'Pots and pans, oil, salt and pepper',
 };
-const notIncluded = ['air conditioning', 'private entrance'];
+const notIncluded = {
+  'air conditioning': '', 
+  'private entrance': ''};
 
 faker.seed(123);
 

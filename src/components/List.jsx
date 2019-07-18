@@ -14,7 +14,7 @@ const List = ({ amenities }) => {
       <p>Dining</p>
       <Amenity name={keysDining[0]} description={amenities.dining[keysDining[0]]} />
       <p>notIncluded</p>
-      <Amenity name="" description={amenities.notIncluded[keysNotIncluded[0]]} />
+      <Amenity name={keysNotIncluded[0]} description={amenities.notIncluded[keysNotIncluded[0]]} />
     </div>  
   ); 
 };
