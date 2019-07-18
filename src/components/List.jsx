@@ -1,38 +1,23 @@
 import React from 'react';
 import Amenity from './Amenity';
 
-class List extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      amenities: {
-        basic: {},
-        dining: {},
-        notIncluded: {},
-      },
-    };
-    // console.log(this.state.amenities.basic);
-  }
-
-  testFn(obj) {
-    const keys = Object.keys(obj);
-    keys.map((key) => (
-      <Amenity name={key} description={obj[key]} />
-    ));
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Basic</h1>
-        {/* {this.testFn(this.state.amenities.basic)}    */}
-        <h1>Dining</h1>
-        <h1>notIncluded</h1>
-      </div>    
-    );
-  }
-}
+const List = ({ amenities }) => {
+  const keysBasic = Object.keys(amenities.basic);
+  const keysDining = Object.keys(amenities.dining);
+  const keysNotIncluded = Object.keys(amenities.notIncluded);
   
+  return (  
+    <div> 
+      <p>Basic</p>
+      {/* {console.log(amenities.basic)} */}
+      <Amenity name={keysBasic[0]} description={amenities.basic[keysBasic[0]]} />
+      <p>Dining</p>
+      <Amenity name={keysDining[0]} description={amenities.dining[keysDining[0]]} />
+      <p>notIncluded</p>
+      <Amenity name="" description={amenities.notIncluded[keysNotIncluded[0]]} />
+    </div>  
+  ); 
+};
 
 export default List;
 

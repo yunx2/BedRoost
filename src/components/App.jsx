@@ -10,7 +10,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.location = props.location;
-    this.state = {listingInfo: false}; 
+    this.state = undefined; 
+    // this.renderAmenities = this.renderAmenities.bind(this);
   }
 
   componentDidMount() {
@@ -29,21 +30,32 @@ class App extends React.Component {
         console.log(err);
       });
   }
+  
+
+  // renderAmenities(obj) {
+  //   console.log(obj);
+  //   const keys = Object.keys(obj);
+  //   keys.map((key) => (
+  //     <div>
+  //       {key}
+  //       <span>{obj[key]}</span>
+  //     </div>
+  //   ));
+  // }
  
   render() {
-    if (this.state.listingInfo) {
-      console.log(this.state.listingInfo.amenities);
+    if (this.state) {
+    // console.log(this.s}tate.listingInfo.amenities);
       return (
         <div>
           <Title title={this.state.listingInfo.title} city={this.state.listingInfo.city} />
-          
           <List amenities={this.state.listingInfo.amenities} />
           <Info about={this.state.listingInfo.description} />
         </div>
       ); 
     }
-    return null;
-  } 
-}
+    return null; 
+  }
+} 
 
 export default App;
